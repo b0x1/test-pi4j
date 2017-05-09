@@ -24,11 +24,17 @@ import com.pi4j.io.gpio.event.PinEventType;
 
 public class Main {
   final static GpioController gpio = GpioFactory.getInstance();
+  static boolean appRunning = true;
   
   public static void main(String args[]) {
     System.out.println("Hello World");
     GpioPinDigitalInput myButton = getProvisionedPin(RaspiPin.GPIO_02);
     myButton.addListener(new GpioUsageExampleListener());
+    
+    while (appRunning) {
+      
+    }
+    
   }
   
   private static GpioPinDigitalInput getProvisionedPin(Pin pin) {
@@ -43,6 +49,7 @@ public class Main {
         // display pin state on console
         System.out.println(" --> GPIO PIN STATE CHANGE: " + event.getPin() + " = "
                 + event.getState());
+        appRunning = false;
     }
   }
 
