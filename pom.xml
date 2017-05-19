@@ -14,17 +14,23 @@
 			<url>https://oss.sonatype.org/content/groups/public</url>
 			<snapshots>
 				<enabled>true</enabled>
-				<!-- <updatePolicy>always</updatePolicy>  -->
+				<!-- <updatePolicy>always</updatePolicy> -->
 			</snapshots>
 		</repository>
 	</repositories>
-
 	<dependencies>
+	<!-- https://mvnrepository.com/artifact/com.pi4j/pi4j-gpio-extension -->
+		<dependency>
+		    <groupId>com.pi4j</groupId>
+		    <artifactId>pi4j-gpio-extension</artifactId>
+		    <version>1.2-SNAPSHOT</version>
+		</dependency>
 		<dependency>
 			<groupId>com.pi4j</groupId>
 			<artifactId>pi4j-core</artifactId>
 			<version>1.2-SNAPSHOT</version>
 		</dependency>
+		
 	</dependencies>
 
 	<build>
